@@ -19,3 +19,8 @@ jobs:
           scheme: ${{ 'default' }}
         run: |
           xcodebuild clean build analyze -scheme "Release - ControlRoom" -project ControlRoom.xcodeproj
+      - uses: actions/upload-artifact@v3
+        with:
+          name: releases
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/ControlRoom-*/Build/Products/*/Control\ Room.app
+
